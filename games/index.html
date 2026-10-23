@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Copliot-Games</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: rgba(15, 23, 42, 0.9);
+      --panel-2: rgba(30, 41, 59, 0.9);
+      --accent: #5eead4;
+      --accent-2: #fbbf24;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --shadow: rgba(0, 0, 0, 0.35);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(180deg, #0b1020, #111827);
+      color: var(--text);
+      font-family: Arial, sans-serif;
+    }
+
+    .menu {
+      width: min(900px, 90vw);
+      background: var(--panel);
+      border: 2px solid rgba(255,255,255,0.08);
+      border-radius: 22px;
+      box-shadow: 0 25px 80px var(--shadow);
+      padding: 34px 28px;
+    }
+
+    .title {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .title h1 {
+      margin: 0 0 8px;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      letter-spacing: 1px;
+    }
+
+    .title p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .games {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      margin-top: 26px;
+    }
+
+    .game-card {
+      position: relative;
+      background: linear-gradient(180deg, var(--panel-2), rgba(15, 23, 42, 0.95));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 22px 18px 18px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+    }
+
+    .game-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(94, 234, 212, 0.65);
+    }
+
+    .game-card .tag {
+      display: inline-block;
+      background: rgba(94, 234, 212, 0.15);
+      color: var(--accent);
+      border: 1px solid rgba(94, 234, 212, 0.4);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .game-card h2 {
+      margin: 16px 0 10px;
+      font-size: 1.6rem;
+    }
+
+    .game-card p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      line-height: 1.5;
+      min-height: 72px;
+    }
+
+    .game-card a {
+      display: inline-block;
+      text-decoration: none;
+      background: linear-gradient(180deg, var(--accent), #2dd4bf);
+      color: #06141b;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-weight: bold;
+      box-shadow: 0 8px 18px rgba(45, 212, 191, 0.26);
+    }
+
+    .game-card.coming-soon {
+      opacity: 0.85;
+    }
+
+    .game-card.coming-soon .tag {
+      background: rgba(251, 191, 36, 0.14);
+      color: var(--accent-2);
+      border-color: rgba(251, 191, 36, 0.4);
+    }
+  </style>
+</head>
+<body>
+  <div class="menu">
+    <div class="title">
+      <h1>Copliot-Games</h1>
+      <p>Select a game to play</p>
+    </div>
+
+    <div class="games">
+      <div class="game-card">
+        <span class="tag">Game 1</span>
+        <h2>Block Breaker</h2>
+        <p>Break every block, survive with 10 lives, and chase high scores with crit blocks and power-ups.</p>
+        <a href="games/block-breaker.html">Play Now</a>
+      </div>
+
+      <div class="game-card coming-soon">
+        <span class="tag">Coming Soon</span>
+        <h2>Game 2</h2>
+        <p>Placeholder for your next browser game addition.</p>
+        <a href="#">Locked</a>
+      </div>
+
+      <div class="game-card coming-soon">
+        <span class="tag">Coming Soon</span>
+        <h2>Game 3</h2>
+        <p>Another game slot ready for future development.</p>
+        <a href="#">Locked</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
